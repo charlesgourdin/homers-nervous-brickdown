@@ -1,25 +1,45 @@
+.homepage {
+   background: url("../images/background-home.jpg") no-repeat;
+   position: relative;
+   height: 100vh;
+}
+.homepage .block button {
+   background: transparent;
+}
+
 .titleHome {
-    font-family: 'Simpsonfont';
-    text-align: center;
-    color: black;
+font-family: 'Simpsonfont';
+text-align: center;
+color: rgb(0, 0, 0);
+background-color: bisque;
 }
 
 h1{
-    color: black;
-    font-size: 2rem;
+text-shadow: 1px 1px 2px yellow;
+color:black;
+font-size: 2rem;
 }
 
 img{
     width: 70%;
     height: 70%;
-}
-
-.linktogame{
+ }
+ .linktogame{
     font-family: 'Simpsonfont';
     font-size: 1.5rem;
     background-color: black;
-    border: solid 1px;
+    border: 1px solid black;
     border-radius: 55px;
     box-shadow: 2px 5px 5px black;
-    padding: 4%;
-}
+    margin: 10px;
+    margin-top: 130px;
+ }
+ .buttons_homepage{
+    position: absolute;
+    margin-top: 397px;
+    margin-left: 56px;
+ }
+ a{
+    color: yellow;
+    text-decoration: none;
+ }

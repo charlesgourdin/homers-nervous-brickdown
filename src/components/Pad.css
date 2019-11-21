@@ -1,11 +1,12 @@
 /* Style for Pad */
-.TabBarre {
-
-    width: 60px;
-    height: 10px;
-    background-color: #70c3b3;
+.widthTab {
     position: absolute;
-    bottom: 50px;   
-    left: 50%;
-    /* transform: translate(-50%, 0); */
+    bottom: 65px;  
+    transition: all linear 25ms;
+}
+.TabBarre {
+    width: 100%;
+    height: 55px;
+    background: url("../images/homer_tab.png") no-repeat;
+    background-size: cover;
 } 
