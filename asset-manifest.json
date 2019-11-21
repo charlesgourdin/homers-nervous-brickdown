@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/charlesgourdin/homers-nervous-brickdown/static/css/main.a7a0acf4.chunk.css",
+    "main.js": "/charlesgourdin/homers-nervous-brickdown/static/js/main.982ed442.chunk.js",
+    "main.js.map": "/charlesgourdin/homers-nervous-brickdown/static/js/main.982ed442.chunk.js.map",
+    "runtime-main.js": "/charlesgourdin/homers-nervous-brickdown/static/js/runtime-main.59c39360.js",
+    "runtime-main.js.map": "/charlesgourdin/homers-nervous-brickdown/static/js/runtime-main.59c39360.js.map",
+    "static/js/2.401c5753.chunk.js": "/charlesgourdin/homers-nervous-brickdown/static/js/2.401c5753.chunk.js",
+    "static/js/2.401c5753.chunk.js.map": "/charlesgourdin/homers-nervous-brickdown/static/js/2.401c5753.chunk.js.map",
+    "index.html": "/charlesgourdin/homers-nervous-brickdown/index.html",
+    "precache-manifest.b0e0bf30af29bdc154de9af32a998cde.js": "/charlesgourdin/homers-nervous-brickdown/precache-manifest.b0e0bf30af29bdc154de9af32a998cde.js",
+    "service-worker.js": "/charlesgourdin/homers-nervous-brickdown/service-worker.js",
+    "static/css/main.a7a0acf4.chunk.css.map": "/charlesgourdin/homers-nervous-brickdown/static/css/main.a7a0acf4.chunk.css.map",
+    "static/media/Donuts.png": "/charlesgourdin/homers-nervous-brickdown/static/media/Donuts.700a23c4.png",
+    "static/media/Duff.png": "/charlesgourdin/homers-nervous-brickdown/static/media/Duff.9265bcc2.png",
+    "static/media/App.css": "/charlesgourdin/homers-nervous-brickdown/static/media/Simpsonfont.514b4b36.ttf",
+    "static/media/bart_fall.png": "/charlesgourdin/homers-nervous-brickdown/static/media/bart_fall.a505266a.png",
+    "static/media/toto.mp3": "/charlesgourdin/homers-nervous-brickdown/static/media/toto.a8132435.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.59c39360.js",
+    "static/js/2.401c5753.chunk.js",
+    "static/css/main.a7a0acf4.chunk.css",
+    "static/js/main.982ed442.chunk.js"
+  ]
+}
