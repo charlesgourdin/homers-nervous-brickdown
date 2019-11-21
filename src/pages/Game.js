@@ -49,10 +49,11 @@ class Game extends Component {
   }
 
   movePad = () => {
-    document.addEventListener('touchstart', event => {
-      if ((event.touches[0].pageX - this.padWidth / 2 > 2) && (event.touches[0].pageX - this.padWidth / 2 < 373 - this.padWidth))
+
+    const firstClick = (e) => {
+      if ((e.pageX - this.padWidth / 2 > 2) && (e.pageX - this.padWidth / 2 < 373 - this.padWidth))
         this.setState({
-          xLeft: Math.ceil(event.touches[0].pageX - this.padWidth / 2)
+          xLeft: Math.ceil(e.pageX - this.padWidth / 2)
         })
       // if - else if : Compteur pour déplacer la balle avant de l'envoyer
       if (!this.isBallMoving && this.counterBall === 1) {
@@ -60,12 +61,12 @@ class Game extends Component {
       } else if (!this.isBallMoving) {
         this.counterBall++
       }
-    }, false);
+    }
 
-    document.addEventListener('touchmove', event => {
+    const thenMoove = (e) => {
       if ((this.state.xLeft > 2) && (this.state.xLeft < 373 - this.padWidth)) {
         this.setState({
-          xLeft: Math.ceil(event.touches[0].pageX - this.padWidth / 2)
+          xLeft: Math.ceil(e.pageX - this.padWidth / 2)
         })
       }
       if (this.state.xLeft <= 2) {
@@ -78,41 +79,45 @@ class Game extends Component {
           xLeft: 372 - this.padWidth
         })
       }
-    }, false);
+    }
+
+    document.addEventListener('touchstart', e => firstClick(e.touches[0]), false);
+
+    document.addEventListener('touchmove', e => thenMoove(e.touches[0]), false);
 
 
-    document.addEventListener('click', event => {
-      if ((event.pageX - this.padWidth / 2 > 2) && (event.pageX - this.padWidth / 2 < 373 - this.padWidth))
-        this.setState({
-          xLeft: Math.ceil(event.pageX - this.padWidth / 2)
-        })
-      // if - else if : Compteur pour déplacer la balle avant de l'envoyer
-      if (!this.isBallMoving && this.counterBall === 1) {
-        this.isBallMoving = true
-      } else if (!this.isBallMoving) {
-        this.counterBall++
-      }
-    }, false);
+    // document.addEventListener('click', event => {
+    //   if ((event.pageX - this.padWidth / 2 > 2) && (event.pageX - this.padWidth / 2 < 373 - this.padWidth))
+    //     this.setState({
+    //       xLeft: Math.ceil(event.pageX - this.padWidth / 2)
+    //     })
+    //   // if - else if : Compteur pour déplacer la balle avant de l'envoyer
+    //   if (!this.isBallMoving && this.counterBall === 1) {
+    //     this.isBallMoving = true
+    //   } else if (!this.isBallMoving) {
+    //     this.counterBall++
+    //   }
+    // }, false);
 
-    document.addEventListener('mousemove', event => {
-      if ((this.state.xLeft > 2) && (this.state.xLeft < 373 - this.padWidth)) {
-        this.setState({
-          xLeft: Math.ceil(event.pageX - this.padWidth / 2)
-        })
-      }
-      if (this.state.xLeft <= 2) {
-        this.setState({
-          xLeft: 3
-        })
-      }
-      if (this.state.xLeft >= 373 - this.padWidth) {
-        this.setState({
-          xLeft: 372 - this.padWidth
-        })
-      }
-    }, false);
+    // document.addEventListener('mousemove', event => {
+    //   if ((this.state.xLeft > 2) && (this.state.xLeft < 373 - this.padWidth)) {
+    //     this.setState({
+    //       xLeft: Math.ceil(event.pageX - this.padWidth / 2)
+    //     })
+    //   }
+    //   if (this.state.xLeft <= 2) {
+    //     this.setState({
+    //       xLeft: 3
+    //     })
+    //   }
+    //   if (this.state.xLeft >= 373 - this.padWidth) {
+    //     this.setState({
+    //       xLeft: 372 - this.padWidth
+    //     })
+    //   }
+    // }, false);
 
-    
+
 
   }
 
