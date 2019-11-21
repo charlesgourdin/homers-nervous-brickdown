@@ -61,6 +61,7 @@ class Game extends Component {
         this.counterBall++
       }
     }, false);
+
     document.addEventListener('touchmove', event => {
       if ((this.state.xLeft > 2) && (this.state.xLeft < 373 - this.padWidth)) {
         this.setState({
@@ -78,6 +79,40 @@ class Game extends Component {
         })
       }
     }, false);
+
+
+    document.addEventListener('click', event => {
+      if ((event.pageX - this.padWidth / 2 > 2) && (event.pageX - this.padWidth / 2 < 373 - this.padWidth))
+        this.setState({
+          xLeft: Math.ceil(event.pageX - this.padWidth / 2)
+        })
+      // if - else if : Compteur pour déplacer la balle avant de l'envoyer
+      if (!this.isBallMoving && this.counterBall === 1) {
+        this.isBallMoving = true
+      } else if (!this.isBallMoving) {
+        this.counterBall++
+      }
+    }, false);
+
+    document.addEventListener('mousemove', event => {
+      if ((this.state.xLeft > 2) && (this.state.xLeft < 373 - this.padWidth)) {
+        this.setState({
+          xLeft: Math.ceil(event.pageX - this.padWidth / 2)
+        })
+      }
+      if (this.state.xLeft <= 2) {
+        this.setState({
+          xLeft: 3
+        })
+      }
+      if (this.state.xLeft >= 373 - this.padWidth) {
+        this.setState({
+          xLeft: 372 - this.padWidth
+        })
+      }
+    }, false);
+
+    
 
   }
 
@@ -287,12 +322,12 @@ class Game extends Component {
 
   getBrickWall = () => {
     const brick = [];
-    for (let i = 0; i < 6; i++) {
-      for (let j = 0; j < 5; j++) {
-        brick.push({ top: i * 25, left: j * 77 })
-      }
-    }
-    // brick.push({ top: 0, left: 0 })
+    // for (let i = 0; i < 6; i++) {
+    //   for (let j = 0; j < 5; j++) {
+    //     brick.push({ top: i * 25, left: j * 77 })
+    //   }
+    // }
+    brick.push({ top: 0, left: 0 })
     return brick;
   };
 
