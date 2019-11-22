@@ -2,6 +2,7 @@ body {
     background: url("../images/background.jpg")no-repeat;
     width: 100vw;
     position: fixed;
+    overflow : hidden;
 }
 
 .Game {
@@ -14,6 +15,7 @@ body {
     background: -webkit-linear-gradient(0deg, rgba(255,255,255,0) 26%, rgba(252,252,252,0.6881127450980392) 60%, rgba(252,252,252,0) 90%);
     background: linear-gradient(0deg, rgba(255,255,255,0) 26%, rgba(252,252,252,0.6881127450980392) 60%, rgba(252,252,252,0) 90%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#fcfcfc",GradientType=1);
+    transform : scale(0.85)
 }
 
 .header {

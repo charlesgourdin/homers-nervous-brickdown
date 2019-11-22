@@ -357,7 +357,7 @@ class Game extends Component {
   render() {
     const { pointLeft, pointTop, xLeft, bartDepart, brickWall } = this.state
     return (
-      <div className="Game" style={{ transform: this.malusOn ? 'scale(0.85) scaleX(-1)' : 'scale(0.85)' }}>
+      <div className="Game">
         {(this.life === 0 || this.state.time === 0 || this.loose === true) && <Popuploose restart={this.getRestart} />}
         {this.win && <Popupwin restart={this.getRestart} />}
         <div className="header">
