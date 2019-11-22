@@ -1,6 +1,7 @@
-/* .App {
-  background: url("../src/images/background.jpg");
-} */
+.App {
+  width: 375px;
+   height: 667px;
+}
 
 @font-face{
   font-family: 'Simpsonfont';

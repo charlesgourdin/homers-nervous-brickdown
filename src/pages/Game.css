@@ -1,7 +1,7 @@
-body {
+
+
+.GameContainer{
     background: url("../images/background.jpg")no-repeat;
-    width: 100vw;
-    position: fixed;
     overflow : hidden;
 }
 
