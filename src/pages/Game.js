@@ -85,39 +85,9 @@ class Game extends Component {
 
     document.addEventListener('touchmove', e => thenMoove(e.touches[0]), false);
 
+    document.addEventListener('click', e => firstClick(e), false);
 
-    // document.addEventListener('click', event => {
-    //   if ((event.pageX - this.padWidth / 2 > 2) && (event.pageX - this.padWidth / 2 < 373 - this.padWidth))
-    //     this.setState({
-    //       xLeft: Math.ceil(event.pageX - this.padWidth / 2)
-    //     })
-    //   // if - else if : Compteur pour déplacer la balle avant de l'envoyer
-    //   if (!this.isBallMoving && this.counterBall === 1) {
-    //     this.isBallMoving = true
-    //   } else if (!this.isBallMoving) {
-    //     this.counterBall++
-    //   }
-    // }, false);
-
-    // document.addEventListener('mousemove', event => {
-    //   if ((this.state.xLeft > 2) && (this.state.xLeft < 373 - this.padWidth)) {
-    //     this.setState({
-    //       xLeft: Math.ceil(event.pageX - this.padWidth / 2)
-    //     })
-    //   }
-    //   if (this.state.xLeft <= 2) {
-    //     this.setState({
-    //       xLeft: 3
-    //     })
-    //   }
-    //   if (this.state.xLeft >= 373 - this.padWidth) {
-    //     this.setState({
-    //       xLeft: 372 - this.padWidth
-    //     })
-    //   }
-    // }, false);
-
-
+    document.addEventListener('mousemove', e => thenMoove(e), false);
 
   }
 
