@@ -5,7 +5,7 @@
   "background_color": "#000000",
   "display": "fullscreen",
   "orientation": "portrait",
-  "start_url": "/nervous-brickdown",
+  "start_url": "/homers-nervous-brickdown/",
   "icons": [
     {
       "src": "icons/icon-72x72.png",
