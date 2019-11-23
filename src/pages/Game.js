@@ -28,7 +28,7 @@ class Game extends Component {
     this.malusOn = false;
     this.speedX = 1.5;
     this.speedY = 1.5;
-    this.win = false;
+    this.win = true;
     this.loose = false;
     this.state = {
       bartDepart: 0,
@@ -358,9 +358,9 @@ class Game extends Component {
     const { pointLeft, pointTop, xLeft, bartDepart, brickWall } = this.state
     return (
       <div className='GameContainer'>
-        <div className="Game" style={{ transform: this.malusOn ? 'scale(0.85) scaleX(-1)' : 'scale(0.85)' }}>
-          {(this.life === 0 || this.state.time === 0 || this.loose === true) && <Popuploose restart={this.getRestart} />}
+        {(this.life === 0 || this.state.time === 0 || this.loose === true) && <Popuploose restart={this.getRestart} />}
           {this.win && <Popupwin restart={this.getRestart} />}
+        <div className="Game" style={{ transform: this.malusOn ? 'scale(0.85) scaleX(-1)' : 'scale(0.85)' }}>
           <div className="header">
             <div className="lifeBar">
               <div className={this.life >= 3 ? "life" : "noLife"}></div>
