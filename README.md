@@ -4,7 +4,9 @@
   <img src='./src/images/hnb_qr_code.png' alt='QRCode' width="200"/>
 </p>
 
-<p align="center">### https://charlesgourdin.github.io/homers-nervous-brickdown/</p>
+<p align="center" font-size="32px"> 
+ https://charlesgourdin.github.io/homers-nervous-brickdown/
+</p>
 
 <p align="center">
 <img src='./src/images/homepage.png' alt='homepage' width="300"/>
