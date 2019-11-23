@@ -8,10 +8,10 @@ https://charlesgourdin.github.io/homers-nervous-brickdown/
 </p>
 
 <p align="center">
-<img src='./src/images/homepage.png' alt='homepage' width="300"/><p>   </p>
-<img src='./src/images/startGame.png' alt='startGame' width="300"/><p>   </p>
-<img src='./src/images/donuts_fall.png' alt='donuts' width="300"/><p>   </p>
-<img src='./src/images/bartFall.png' alt='bartFall' width="300"/><p>   </p>
+<img src='./src/images/homepage.png' alt='homepage' width="300"/>   
+<img src='./src/images/startGame.png' alt='startGame' width="300"/>   
+<img src='./src/images/donuts_fall.png' alt='donuts' width="300"/>   
+<img src='./src/images/bartFall.png' alt='bartFall' width="300"/>   
 </div>
 
 
