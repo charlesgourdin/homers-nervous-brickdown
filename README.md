@@ -4,15 +4,13 @@
   <img src='./src/images/hnb_qr_code.png' alt='QRCode' width="200"/>
 </p>
 
-<p align="center" font-size="32px"> 
- https://charlesgourdin.github.io/homers-nervous-brickdown/
-</p>
+### Or click here to play : https://charlesgourdin.github.io/homers-nervous-brickdown/
 
 <p align="center">
-<img src='./src/images/homepage.png' alt='homepage' width="300"/>
-<img src='./src/images/startGame.png' alt='startGame' width="300"/>
-<img src='./src/images/donuts_fall.png' alt='donuts' width="300"/>
-<img src='./src/images/bartFall.png' alt='bartFall' width="300"/>
+<img src='./src/images/homepage.png' alt='homepage' width="300" margin="32px"/>
+<img src='./src/images/startGame.png' alt='startGame' width="300" margin="32px"/>
+<img src='./src/images/donuts_fall.png' alt='donuts' width="300" margin="32px"/>
+<img src='./src/images/bartFall.png' alt='bartFall' width="300" margin="32px"/>
 </div>
 
 
