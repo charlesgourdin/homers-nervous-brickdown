@@ -5,7 +5,7 @@
 
 https://charlesgourdin.github.io/homers-nervous-brickdown/
 
-<img src='./src/images/hnb_qr_code.png' alt='QRCode' style="width:50%;/>
+<img src='./src/images/hnb_qr_code.png' alt='QRCode' style="width:50%";/>
 
 <img src='./src/images/homepage.png' alt='homepage'/>
 <img src='./src/images/startGame.png' alt='startGame'/>
