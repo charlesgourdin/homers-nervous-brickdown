@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/homers-nervous-brickdown/static/css/main.f908eaee.chunk.css",
-    "main.js": "/homers-nervous-brickdown/static/js/main.b79e9ac5.chunk.js",
-    "main.js.map": "/homers-nervous-brickdown/static/js/main.b79e9ac5.chunk.js.map",
+    "main.css": "/homers-nervous-brickdown/static/css/main.1d36b61c.chunk.css",
+    "main.js": "/homers-nervous-brickdown/static/js/main.5a5cdf20.chunk.js",
+    "main.js.map": "/homers-nervous-brickdown/static/js/main.5a5cdf20.chunk.js.map",
     "runtime-main.js": "/homers-nervous-brickdown/static/js/runtime-main.9af48499.js",
     "runtime-main.js.map": "/homers-nervous-brickdown/static/js/runtime-main.9af48499.js.map",
-    "static/js/2.a3245cb9.chunk.js": "/homers-nervous-brickdown/static/js/2.a3245cb9.chunk.js",
-    "static/js/2.a3245cb9.chunk.js.map": "/homers-nervous-brickdown/static/js/2.a3245cb9.chunk.js.map",
+    "static/js/2.844155bc.chunk.js": "/homers-nervous-brickdown/static/js/2.844155bc.chunk.js",
+    "static/js/2.844155bc.chunk.js.map": "/homers-nervous-brickdown/static/js/2.844155bc.chunk.js.map",
     "index.html": "/homers-nervous-brickdown/index.html",
-    "precache-manifest.530ebf86a3e547bf15f2b2cfb79ffca5.js": "/homers-nervous-brickdown/precache-manifest.530ebf86a3e547bf15f2b2cfb79ffca5.js",
+    "precache-manifest.bdfba812f03c17b69f9247296b021872.js": "/homers-nervous-brickdown/precache-manifest.bdfba812f03c17b69f9247296b021872.js",
     "service-worker.js": "/homers-nervous-brickdown/service-worker.js",
-    "static/css/main.f908eaee.chunk.css.map": "/homers-nervous-brickdown/static/css/main.f908eaee.chunk.css.map",
+    "static/css/main.1d36b61c.chunk.css.map": "/homers-nervous-brickdown/static/css/main.1d36b61c.chunk.css.map",
     "static/media/Donuts.png": "/homers-nervous-brickdown/static/media/Donuts.700a23c4.png",
     "static/media/Duff.png": "/homers-nervous-brickdown/static/media/Duff.9265bcc2.png",
     "static/media/Popupwin.css": "/homers-nervous-brickdown/static/media/Simpsonfont.514b4b36.ttf",
@@ -26,13 +26,12 @@
     "static/media/Pad.css": "/homers-nervous-brickdown/static/media/homer_tab.c6fa67ab.png",
     "static/media/homer_tab_clic1.png": "/homers-nervous-brickdown/static/media/homer_tab_clic1.ef4abf9a.png",
     "static/media/homer_tab_reverse.png": "/homers-nervous-brickdown/static/media/homer_tab_reverse.56bf5753.png",
-    "static/media/lostgame.jpg": "/homers-nervous-brickdown/static/media/lostgame.4e5f83fc.jpg",
-    "static/media/toto.mp3": "/homers-nervous-brickdown/static/media/toto.a8132435.mp3"
+    "static/media/lostgame.jpg": "/homers-nervous-brickdown/static/media/lostgame.4e5f83fc.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.9af48499.js",
-    "static/js/2.a3245cb9.chunk.js",
-    "static/css/main.f908eaee.chunk.css",
-    "static/js/main.b79e9ac5.chunk.js"
+    "static/js/2.844155bc.chunk.js",
+    "static/css/main.1d36b61c.chunk.css",
+    "static/js/main.5a5cdf20.chunk.js"
   ]
 }
