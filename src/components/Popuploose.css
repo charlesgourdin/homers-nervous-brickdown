@@ -4,15 +4,20 @@
 }
 
 .contenu{
+    height: 100%;
+    width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(39, 39, 39, 0.7);
 }
 
 .looser {
     font-family: 'Simpsonfont';
     font-size: 2.5rem;
-    text-shadow: 2px 2px 2px white;
-    color: black;
-    margin-top: 123%;
+    color: white;
+    text-shadow: 2px 2px 2px black;
 }
 
 .button_end1{
@@ -20,12 +25,12 @@
     padding: 2.7%;
     margin: 0px 15px 10px 5px;
     font-size: 1rem;
-    background: black;
-    color: white;
+    background: white;
+    color: black;
     border-radius: 50px;
 }
 
 .button_end1 a{
     text-decoration: none;
-    color: white;
+    color: black;
 }

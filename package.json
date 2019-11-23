@@ -2,7 +2,7 @@
   "name": "brickbreaker",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wildcodeschool.github.io/lyon-0919-react-p2-brick-breaker/",
+  "homepage": "https://charlesgourdin.github.io/homers-nervous-brickdown/#",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "react": "^16.10.2",

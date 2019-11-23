@@ -13,6 +13,7 @@ import Malus from '../components/Malus';
 import dunutsUrl from '../musique/donuts.mp3'
 import dohUrl from '../musique/doh.mp3'
 import FallingBart from '../components/FallingBart';
+import { Link } from 'react-router-dom';
 
 class Game extends Component {
   constructor(props) {
@@ -49,10 +50,11 @@ class Game extends Component {
   }
 
   movePad = () => {
-    document.addEventListener('touchstart', event => {
-      if ((event.touches[0].pageX - this.padWidth / 2 > 2) && (event.touches[0].pageX - this.padWidth / 2 < 373 - this.padWidth))
+
+    const firstClick = (e) => {
+      if ((e.pageX - this.padWidth / 2 > 2) && (e.pageX - this.padWidth / 2 < 373 - this.padWidth))
         this.setState({
-          xLeft: Math.ceil(event.touches[0].pageX - this.padWidth / 2)
+          xLeft: Math.ceil(e.pageX - this.padWidth / 2)
         })
       // if - else if : Compteur pour déplacer la balle avant de l'envoyer
       if (!this.isBallMoving && this.counterBall === 1) {
@@ -60,11 +62,12 @@ class Game extends Component {
       } else if (!this.isBallMoving) {
         this.counterBall++
       }
-    }, false);
-    document.addEventListener('touchmove', event => {
+    }
+
+    const thenMoove = (e) => {
       if ((this.state.xLeft > 2) && (this.state.xLeft < 373 - this.padWidth)) {
         this.setState({
-          xLeft: Math.ceil(event.touches[0].pageX - this.padWidth / 2)
+          xLeft: Math.ceil(e.pageX - this.padWidth / 2)
         })
       }
       if (this.state.xLeft <= 2) {
@@ -77,7 +80,15 @@ class Game extends Component {
           xLeft: 372 - this.padWidth
         })
       }
-    }, false);
+    }
+
+    document.addEventListener('touchstart', e => firstClick(e.touches[0]), false);
+
+    document.addEventListener('touchmove', e => thenMoove(e.touches[0]), false);
+
+    document.addEventListener('click', e => firstClick(e), false);
+
+    document.addEventListener('mousemove', e => thenMoove(e), false);
 
   }
 
@@ -314,6 +325,7 @@ class Game extends Component {
   getRestart = () => {
     this.life = 3
     this.win = false
+    this.loose = false
     this.setState({ brickWall: this.getBrickWall(), bonus: [], time: 61 })
   }
 
@@ -339,6 +351,14 @@ class Game extends Component {
     this.getMalus()
   }
 
+  componentWillUnmount(){
+    this.moovingBall()
+    this.movePad()
+    this.MouvBartX()
+    this.countDown()
+    this.getMalus()
+  }
+
   shouldComponentUpdate(nextProps, nextState) {
     return nextState.timer === 8 || this.state.pointLeft > 355 || this.state.pointLeft < 0 || this.checkIfCollideX() || this.state.pointTop < 0 || this.checkIfCollideY() || this.checkIfCollidePadY();
   }
@@ -347,57 +367,60 @@ class Game extends Component {
   render() {
     const { pointLeft, pointTop, xLeft, bartDepart, brickWall } = this.state
     return (
-      <div className="Game" style={{ transform: this.malusOn ? 'scale(0.85) scaleX(-1)' : 'scale(0.85)' }}>
+      <div className='GameContainer'>
         {(this.life === 0 || this.state.time === 0 || this.loose === true) && <Popuploose restart={this.getRestart} />}
-        {this.win && <Popupwin restart={this.getRestart} />}
-        <div className="header">
-          <div className="lifeBar">
-            <div className={this.life >= 3 ? "life" : "noLife"}></div>
-            <div className={this.life >= 2 ? "life" : "noLife"}></div>
-            <div className={this.life >= 1 ? "life" : "noLife"}></div>
+          {this.win && <Popupwin restart={this.getRestart} />}
+          <button className="goToMain"><Link to ="/">Home</Link></button>
+        <div className="Game" style={{ transform: this.malusOn ? 'scale(0.85) scaleX(-1)' : 'scale(0.85)' }}>
+          <div className="header">
+            <div className="lifeBar">
+              <div className={this.life >= 3 ? "life" : "noLife"}></div>
+              <div className={this.life >= 2 ? "life" : "noLife"}></div>
+              <div className={this.life >= 1 ? "life" : "noLife"}></div>
+            </div>
+            {this.props.counter === true && <Countdown time={this.state.time} color={this.state.color}></Countdown>}
           </div>
-          {this.props.counter === true && <Countdown time={this.state.time} color={this.state.color}></Countdown>}
-        </div>
-        <div style={{ position: 'relative', height: '600px', width: '375', top: '67px' }}>
-          <MoveBart left={bartDepart} bartGoRight={this.bartGoRight} endGame={brickWall} />
-          {this.state.brickWall.map(item => {
-            return (
-              <Bricks
-                top={item.top}
-                left={item.left}
-                key={item.top + '-' + item.left}
+          <div style={{ position: 'relative', height: '600px', width: '375', top: '67px' }}>
+            <MoveBart left={bartDepart} bartGoRight={this.bartGoRight} endGame={brickWall} />
+            {this.state.brickWall.map(item => {
+              return (
+                <Bricks
+                  top={item.top}
+                  left={item.left}
+                  key={item.top + '-' + item.left}
+                />
+              );
+            })}
+            {this.state.bonus.map(item => {
+              return (
+                <Bonus
+                  top={item.top}
+                  left={item.left + 10}
+                  key={item.top + '-' + item.left}
+                  callback={this.isBonusCollide} />
+              )
+            }
+            )}
+            {this.state.malus.map(item => {
+              return (
+                <Malus
+                  left={item}
+                  key={item}
+                  isMalusCollide={this.isMalusCollide} />
+              )
+            }
+            )}
+            {this.state.brickWall.length === 0 &&
+              <FallingBart
+                left={this.state.bartDepart}
+                isBartCollide={this.isBartCollide}
+                isBartDontCollide={this.isBartDontCollide}
               />
-            );
-          })}
-          {this.state.bonus.map(item => {
-            return (
-              <Bonus
-                top={item.top}
-                left={item.left + 10}
-                key={item.top + '-' + item.left}
-                callback={this.isBonusCollide} />
-            )
-          }
-          )}
-          {this.state.malus.map(item => {
-            return (
-              <Malus
-                left={item}
-                key={item}
-                isMalusCollide={this.isMalusCollide} />
-            )
-          }
-          )}
-          {this.state.brickWall.length === 0 &&
-            <FallingBart
-              left={this.state.bartDepart}
-              isBartCollide={this.isBartCollide}
-              isBartDontCollide={this.isBartDontCollide}
-            />
-          }
-          < Point left={pointLeft} top={pointTop} move={this.isBallMoving} brick={brickWall} />
-          {/* <div style={{width: `${this.padWidth}px` , zIndex:'1000', position:'absolute', top:'492px', left:`${xLeft}px`, border: '2px red solid'}}></div> */}
-          <Pad left={xLeft} width={this.padWidth} />
+            }
+            < Point left={pointLeft} top={pointTop} move={this.isBallMoving} brick={brickWall} />
+            {/* <div style={{width: `${this.padWidth}px` , zIndex:'1000', position:'absolute', top:'492px', left:`${xLeft}px`, border: '2px red solid'}}></div> */}
+            <Pad left={xLeft} width={this.padWidth} />
+          </div>
         </div>
       </div>
     );

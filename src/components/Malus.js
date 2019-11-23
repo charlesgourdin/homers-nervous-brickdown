@@ -32,6 +32,10 @@ class Malus extends Component {
         this.falling();
     }
 
+    componentWillUnmount=()=>{
+        this.falling();
+    }
+
     render() {
         const { left } = this.props
         const { top, display } = this.state

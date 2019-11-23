@@ -4,7 +4,13 @@
 }
 
 .contenu{
+    height: 100%;
+    width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(39, 39, 39, 0.7);
 }
 
 .looser1{
@@ -12,7 +18,6 @@
     font-size: 2.5rem;
     color: white;
     text-shadow: 2px 2px 2px black;
-    margin-top: 120%;
 }
 
 .button_end{

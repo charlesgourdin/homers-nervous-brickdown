@@ -17,33 +17,37 @@
 }
 
 .homer_tab_clic1{
-  width: 110px;
-  margin-bottom: -15px;
-  margin-left: -30px;
+  width: 20%;
+  object-fit: contain;
 }
 
 .dufftutorial{
   width: 40px;
   margin-left: 30px;
+  object-fit: contain;
 }
 
 .homer_donuts{
   width: 110px;
   margin-left: -30px;
+  object-fit: contain;
 }
 
 .homer_donuts_dooble{
   width: 140px;
+  object-fit: contain;
 }
 
 .homer_tab_reverse
 {
   width: 110px;
+  object-fit: contain;
 }
 
 .heartlife{
   width: 30px;
   margin-left: 60px;
+  object-fit: contain;
 }
 
 .block{
@@ -65,11 +69,42 @@ button {
 
 .alignItems{
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   font-size: 1.4rem;
+  margin: 0;
+  flex-wrap: nowrap;
 }
+
 .x{
   font-size: 1.5rem;
   margin: 35px;
+}
+
+.block p{
+  display: block;
+}
+
+.myButton {
+	box-shadow: 0px 0px 0px 2px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:10px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:19px;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
 }
