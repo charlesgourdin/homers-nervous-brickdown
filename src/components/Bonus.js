@@ -28,7 +28,10 @@ class Bonus extends Component {
 
     componentDidMount=()=>{
         this.falling();
-        // () => this.props.callback(this.state.top, this.props.left)
+    }
+
+    componentWillUnmount=()=>{
+        this.falling();
     }
 
     render(){

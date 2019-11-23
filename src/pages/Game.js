@@ -13,6 +13,7 @@ import Malus from '../components/Malus';
 import dunutsUrl from '../musique/donuts.mp3'
 import dohUrl from '../musique/doh.mp3'
 import FallingBart from '../components/FallingBart';
+import { Link } from 'react-router-dom';
 
 class Game extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class Game extends Component {
     this.malusOn = false;
     this.speedX = 1.5;
     this.speedY = 1.5;
-    this.win = true;
+    this.win = false;
     this.loose = false;
     this.state = {
       bartDepart: 0,
@@ -297,12 +298,12 @@ class Game extends Component {
 
   getBrickWall = () => {
     const brick = [];
-    // for (let i = 0; i < 6; i++) {
-    //   for (let j = 0; j < 5; j++) {
-    //     brick.push({ top: i * 25, left: j * 77 })
-    //   }
-    // }
-    brick.push({ top: 0, left: 0 })
+    for (let i = 0; i < 6; i++) {
+      for (let j = 0; j < 5; j++) {
+        brick.push({ top: i * 25, left: j * 77 })
+      }
+    }
+    // brick.push({ top: 0, left: 0 })
     return brick;
   };
 
@@ -324,6 +325,7 @@ class Game extends Component {
   getRestart = () => {
     this.life = 3
     this.win = false
+    this.loose = false
     this.setState({ brickWall: this.getBrickWall(), bonus: [], time: 61 })
   }
 
@@ -349,6 +351,14 @@ class Game extends Component {
     this.getMalus()
   }
 
+  componentWillUnmount(){
+    this.moovingBall()
+    this.movePad()
+    this.MouvBartX()
+    this.countDown()
+    this.getMalus()
+  }
+
   shouldComponentUpdate(nextProps, nextState) {
     return nextState.timer === 8 || this.state.pointLeft > 355 || this.state.pointLeft < 0 || this.checkIfCollideX() || this.state.pointTop < 0 || this.checkIfCollideY() || this.checkIfCollidePadY();
   }
@@ -360,6 +370,7 @@ class Game extends Component {
       <div className='GameContainer'>
         {(this.life === 0 || this.state.time === 0 || this.loose === true) && <Popuploose restart={this.getRestart} />}
           {this.win && <Popupwin restart={this.getRestart} />}
+          <button className="goToMain"><Link to ="/">Home</Link></button>
         <div className="Game" style={{ transform: this.malusOn ? 'scale(0.85) scaleX(-1)' : 'scale(0.85)' }}>
           <div className="header">
             <div className="lifeBar">
