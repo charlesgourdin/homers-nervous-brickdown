@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/homers-nervous-brickdown/precache-manifest.b830ebffc51c78d8362acf3a5a1a9a5a.js"
+  "/homers-nervous-brickdown/precache-manifest.ac1af56b27a422ac65c82a7e7d8d6e4e.js"
 );
 
 self.addEventListener('message', (event) => {
