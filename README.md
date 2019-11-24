@@ -1,5 +1,8 @@
 <img src='./src/images/Banniere.png' alt='banniere'/>
 
+### Here is a project developed in React. We were asked to develop a game on the theme of simpsons, we chose to make a brick breaker. Enjoy!
+
+
 <p align="center">
   <img src='./src/images/hnb_qr_code.png' alt='QRCode' width="200"/>
 </p>
