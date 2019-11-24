@@ -370,7 +370,7 @@ class Game extends Component {
       <div className='GameContainer'>
         {(this.life === 0 || this.state.time === 0 || this.loose === true) && <Popuploose restart={this.getRestart} />}
           {this.win && <Popupwin restart={this.getRestart} />}
-          <button className="goToMain" style={{display : (this.loose || this.win) ? 'none' : 'block'}}><Link to ="/">Home</Link></button>
+          <button className="goToMain" style={{display : (this.loose === true || this.win === true || this.life === 0 || this.state.time === 0) ? 'none' : 'block'}}><Link to ="/">Home</Link></button>
         <div className="Game" style={{ transform: this.malusOn ? 'scale(0.85) scaleX(-1)' : 'scale(0.85)' }}>
           <div className="header">
             <div className="lifeBar">
